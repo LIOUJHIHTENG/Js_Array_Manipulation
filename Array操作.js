@@ -177,6 +177,7 @@ let numberSort=[4,2,5,1,3]
 //精簡寫法
 //升序
 numberSort.sort(function(a,b){
+    console.log(a,b)
     return a-b//a-b>0
 })
 console.log(`numberSort(Ascending ):${numberSort}`)
@@ -191,28 +192,46 @@ console.log(`numberSort(Descending):${numberSort}`)
     //升序降序原本寫法:
     // 升序
     arr.sort(function(a, b) {
-    if(a > b){
-        return 1; // 正數時，後面的數放在前面
-    } else {
-        return -1 // 負數時，前面的數放在前面
-    }
+        if(a > b){
+            return 1; // 正數時，後面的數放在前面
+        } else {
+            return -1 // 負數時，前面的數放在前面
+        }
     });
 
     // 降序
     arr.sort(function(a, b) {
-    if(a < b){
-        return 1; // 正數時，後面的數放在前面
-    } else {
-        return -1 // 負數時，前面的數放在前面
-    }
+        if(a < b){
+            return 1; // 正數時，後面的數放在前面
+        } else {
+            return -1 // 負數時，前面的數放在前面
+        }
     });
 
     // 升序 另一種寫法，就會精簡到像最上面那樣！
     arr.sort(function(a, b) {
-    if(a > b){ // a > b  等於 a - b > 0
-        return a - b; 
-    } else {
-        return a - b 
-    }
+        if(a > b){ // a > b  等於 a - b > 0
+            return a - b; 
+        } else {
+            return a - b 
+        }
     });
  */
+
+//比較字串長度
+let word=["hi","hello","nice","yesterday"]
+word.sort(function(a,b){
+    return a.length-b.length
+}) 
+console.log(`word:${word}`)
+
+//對字串做不區分大小寫的排序
+let food=["apple","coco","Banana","Egg"]
+food.sort(function(a,b){
+    let x=a.toLowerCase()
+    let y=b.toLowerCase()
+    if(x>y) return 1
+    if(x<y) return -1
+    else return 0
+})
+console.log(`food:${food}`)
