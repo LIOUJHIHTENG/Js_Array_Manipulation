@@ -5,6 +5,10 @@
 let arr=[0,1,2,3,4,5]
 console.log(`arr:${arr}`)
 
+console.log("=========刪除陣列重複元素============")
+let repeatArr=[0,7,3,2,5,1,7,0,5]
+console.log(`repeatArr:${[...new Set(repeatArr)]}`)
+
 console.log("=========Array.isArray===============")
 //Array.isArray(obj) 是否為陣列
 console.log(`Array is Array?${Array.isArray(arr)}`)
@@ -71,6 +75,16 @@ arrSplice.splice(1,2,20)
 console.log(`arrSplice.splice(1,2,20):${arrSplice}`)
 arrSplice.splice(1,0,"插隊")
 console.log(`arrSplice.splice(1,0,25):${arrSplice}`)
+
+console.log("===========split===============")
+//分割字串成字串組(陣列)
+let str="how are you?"
+let splitStr1=str.split(" ")
+let splitStr2=str.split("")
+let splitStr3=str.split(" ",3)
+console.log(`splitStr1:${splitStr1}`)
+console.log(`splitStr2:${splitStr2}`)
+console.log(`splitStr3:${splitStr3}`)
 
 console.log("============reduce============")
 //array.reduce(callback)讓陣列中的每個元素與回傳的值再次作運算，將陣列化為單一值，常常拿來應用於陣列中每個元素的「累加」或是「比較」
